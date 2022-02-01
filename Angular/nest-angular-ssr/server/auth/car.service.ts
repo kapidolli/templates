@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Entity, Schema } from 'redis-om';
-import { ConnectionRedisService } from '../../shared/connection-redis.service';
+import { ConnectionRedisService } from '../shared/connection-redis.service';
 
 class Car extends Entity {}
 let schema = new Schema(
