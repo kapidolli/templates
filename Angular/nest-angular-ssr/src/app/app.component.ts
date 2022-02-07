@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'fullstack-sample-project';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
 
-  clickButton() {
-    this.http.get<any>('/api/auth').subscribe({
-      next: (name) => {
-        this.title = name.name;
-      },
-    });
+  loginWithRedirect() {
+    if (isPlatformBrowser(this.platformId)) {
+
+    }
   }
 }

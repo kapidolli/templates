@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { CarService } from 'server/auth/car.service';
 import { SharedModule } from '../shared/shared.module';
 import { AuthController } from './auth.controller';
+import { AuthService } from './auth.service';
 
 @Module({
-  controllers: [AuthController],
-  providers: [CarService],
-  imports: [SharedModule]
+  providers: [AuthService],
+  imports: [SharedModule],
+  controllers: [AuthController]
 })
 export class AuthModule {}

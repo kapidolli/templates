@@ -1,32 +1,27 @@
-import { Controller, Get } from '@nestjs/common';
-import { CarService } from './car.service';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
+import { GetUser } from './get-user.decorator';
+import { User } from './user.model';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private carService: CarService) {}
+  constructor(private authService: AuthService) {}
 
-  @Get()
-  test() {
-    return this.carService.getCar('01FTGE9TS3G54MRFB2ME35GKFQ');
+  @Get(':id')
+  getUserById(@Param('id') id: string, @GetUser() user: any) {
+    return this.authService.getUser(id);
   }
 
-  @Get('create')
-  createCar() {
-    return this.carService.createCar({
-      make: 'a',
-      model: 'c classe',
-      description: 'a muj me gjet',
-    });
-  }
-
-  @Get('all')
-  getAll() {
-    return this.carService.searchAllCars();
+  @Post()
+  @UseGuards(AuthGuard)
+  createUser(@GetUser() user: User) {
+    return this.authService.createUser(user);
   }
 
   @Get('index')
   createIndex() {
-    this.carService.createIndex();
-    return { message: 'OK!' };
+    this.authService.createIndex();
+    return { message: 'ok' };
   }
 }
