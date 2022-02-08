@@ -11,7 +11,9 @@ Before using the app some things should be configured first
 On the current working directory using a cli dependent on OS an environment variable `STAGE=dev/prod` should be set
 
 ex.
+
 For windows use `export STAGE=dev`
+
 For linux/mac use `set STAGE=dev`
 
 ### Redis Database
