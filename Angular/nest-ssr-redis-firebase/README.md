@@ -1,6 +1,6 @@
 # nest-ssr-redis-firebase
 
-This template is for creating Angular project with with already using SSR based on NEST.js, redis-om for data storage and firebase for authentication
+This template is for creating Angular project with with already using SSR based on NEST.js, [redis-om][redis-om-url] for data storage and firebase for authentication
 
 ## Configure
 
@@ -37,6 +37,7 @@ Or for your local docker instance the url is `redis://localhost:6379`
 
 <!-- Links -->
 
+[redis-om]: https://github.com/redis/redis-om-node
 [redis-cloud-url]: https://redis.com/try-free/
 [redisearch-url]: https://oss.redis.com/redisearch/
 [redis-json-url]: https://oss.redis.com/redisjson/
