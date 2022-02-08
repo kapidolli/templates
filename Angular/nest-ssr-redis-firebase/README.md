@@ -1,6 +1,6 @@
 # nest-ssr-redis-firebase
 
-This template is for creating Angular project with with already using SSR based on [NestJS][nestjs-url], [Redis OM][redis-om-url] for data storage and firebase for authentication
+This template is for creating Angular project with with already using SSR based on [NestJS][nestjs-url], [Redis OM][redis-om-url] for data storage and [Firebase][firebase-url] for authentication
 
 ## Configure
 
