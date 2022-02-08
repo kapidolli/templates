@@ -25,7 +25,8 @@ On the file `env.stage.*` the property `REDIS_URL` should contain and url to an 
 
 The basic format of an url is
 
-    redis://username:password@host:port
+    redis://username:password@host:port 
+Or for your local docker instance the url is `redis://localhost:6379`
 
 ### Firebase Auth
 
