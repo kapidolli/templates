@@ -42,3 +42,5 @@ and change the json object to
   }
 }
 ```
+and run `template init`
+
