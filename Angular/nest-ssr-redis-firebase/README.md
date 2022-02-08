@@ -27,12 +27,30 @@ The basic format of an url is
 
     redis://username:password@host:port 
 Or for your local docker instance the url is `redis://localhost:6379`
-<--
-### Firebase Auth
--->
+
+<-- ### Firebase Auth -->
 
 ## To use
 
+```bash
+npm run dev:ssr
+```
+
+## Deploy
+
+Google cloud and firebase deploy
+
+```bash
+gcloud auth login
+
+docker build . -t app-name
+
+docker tag app-name gcr.io/project-name/app-name
+
+docker push gcr.io/project-name/app-name
+
+firebase deploy --only hosting
+```
 
 
 <!-- Links -->
