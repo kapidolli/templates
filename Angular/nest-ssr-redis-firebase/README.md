@@ -39,6 +39,7 @@ Or for your local docker instance the url is `redis://localhost:6379`
 
 [nestjs-url]: https://nestjs.com/
 [redis-om-url]: https://github.com/redis/redis-om-node
+[firebase-url]: https://firebase.google.com/
 [redis-cloud-url]: https://redis.com/try-free/
 [redisearch-url]: https://oss.redis.com/redisearch/
 [redis-json-url]: https://oss.redis.com/redisjson/
