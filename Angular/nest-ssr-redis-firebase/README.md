@@ -8,9 +8,11 @@ Before using the app some things should be configured first
 
 ### Environment variables
 
-On windows use `export STAGE=dev`
+On the current working directory using a cli dependent on OS an environment variable `STAGE=dev/prod` should be set
 
-On linux/mac use `set STAGE=dev`
+ex.
+For windows use `export STAGE=dev`
+For linux/mac use `set STAGE=dev`
 
 ### Redis Database
 
