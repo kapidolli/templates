@@ -2,12 +2,14 @@
 
 This repo is build to create projects from template with already set up configurations
 
-## To use
+## Install
 
 Install the template cli using npm 
 ```bash
 npm i -g project-template-cli
 ```
+
+## Configure
 
 Configure the template cli with the commands
 ```bash
@@ -43,4 +45,8 @@ and change the json object to
   }
 }
 ```
-and run `template init`
+## Run
+Navigate to a specific folder location where you want to create project using the template and from a cli run
+```bash
+template init
+```
