@@ -21,7 +21,7 @@ Redis database is needed, preferably with [RediSearch][redisearch-url] and [Redi
 
     $ docker run -p 6379:6379 redislabs/redismod:preview
 
-On the file `env.stage.*` the property `REDIS_URL` should contain and url to an running redis db
+On the file `env.stage.*` the property `REDIS_URL` should contain an url pointing to an running redis db
 
 The basic format of an url is
 
