@@ -25,7 +25,7 @@ On the file `env.stage.*` the property `REDIS_URL` should contain and url to an 
 
 The basic format of an url is
 
-`redis://username:password@host:port`
+    redis://username:password@host:port
 
 ### Firebase Auth
 
