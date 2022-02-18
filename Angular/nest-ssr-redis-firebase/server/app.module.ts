@@ -17,7 +17,7 @@ import { SharedModule } from './shared/shared.module';
     }),
     AngularUniversalModule.forRoot({
       bootstrap: AppServerModule,
-      viewsPath: join(process.cwd(), 'dist/fullstack-sample-project/browser'),
+      viewsPath: join(process.cwd(), 'dist/nest-ssr-redis-firebase/browser'),
     }),
     AuthModule,
     SharedModule,
