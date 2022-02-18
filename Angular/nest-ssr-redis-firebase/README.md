@@ -1,27 +1,63 @@
-# FullstackSampleProject
+# nest-ssr-redis-firebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+This template is for creating Angular project using SSR based on [NestJS][nestjs-url], [Redis OM][redis-om-url] for data storage and [Firebase][firebase-url] for authentication
 
-## Development server
+## Configure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Before using the app some things should be configured first
 
-## Code scaffolding
+### Environment variables
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+On the current working directory using a cli dependent on OS an environment variable `STAGE=dev/prod` should be set
 
-## Build
+#### ex.
+For windows use `export STAGE=dev`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+For linux/mac use `set STAGE=dev`
 
-## Running unit tests
+### Redis Database
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Redis database is needed, preferably with [RediSearch][redisearch-url] and [RedisJSON][redis-json-url] installed. The easiest way to do this is to set up a free [Redis Cloud][redis-cloud-url] instance. But, you can also use Docker:
 
-## Running end-to-end tests
+    $ docker run -p 6379:6379 redislabs/redismod:preview
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+On the file `env.stage.*` the property `REDIS_URL` should contain an url pointing to an running redis db
 
-## Further help
+The basic format of an url is
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    redis://username:password@host:port 
+Or for your local docker instance the url is `redis://localhost:6379`
+
+### Firebase Auth
+
+## To use
+
+```bash
+npm run dev:ssr
+```
+
+## Deploy
+
+Google cloud and firebase deploy
+
+```bash
+gcloud auth login
+
+docker build . -t app-name
+
+docker tag app-name gcr.io/project-name/app-name
+
+docker push gcr.io/project-name/app-name
+
+firebase deploy --only hosting
+```
+
+
+<!-- Links -->
+
+[nestjs-url]: https://nestjs.com/
+[redis-om-url]: https://github.com/redis/redis-om-node
+[firebase-url]: https://firebase.google.com/
+[redis-cloud-url]: https://redis.com/try-free/
+[redisearch-url]: https://oss.redis.com/redisearch/
+[redis-json-url]: https://oss.redis.com/redisjson/
